@@ -1,0 +1,26 @@
+body {
+  font-family: 'Inconsolata', monospace;
+  font-size: 18px;
+  margin: 0;
+}
+
+game {
+  height: 100vh;
+}
+
+emoji > div {
+  font-size: 2rem;
+  height: 50px;
+  width: 50px;
+  &.clicked {
+    background: aquamarine;
+    &.wrong {
+      background: salmon;
+    }
+  }
+}
+
+.restart {
+  background: slateblue;
+  color: white;
+}
