@@ -1,6 +1,4 @@
-# Superhero App - Augury Example Application
-
-Use this application to get familiar with Augury
+# GET FISHIN'
 
 ## Building and Serving
 
