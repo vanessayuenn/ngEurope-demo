@@ -63,7 +63,8 @@ module.exports = {
       { test: /\.ttf/, loader: 'url' },
       { test: /\.jpg/, loader: 'url-loader?mimetype=image/jpg' },
       { test: /\.less$/, loader: 'raw-loader!less-loader' },
-      { test: /\.json$/, loader: 'json-loader'}
+      { test: /\.json$/, loader: 'json-loader'},
+      { test: /\.(jpe?g|png|gif|svg)$/, loader: 'file' }
     ],
     noParse: [ /zone\.js\/dist\/.+/, /angular2\/bundles\/.+/ ]
   },

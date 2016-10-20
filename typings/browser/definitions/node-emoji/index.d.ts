@@ -2,6 +2,7 @@
 // Source: source/pipes/node-emoji.d.ts
 declare module 'node-emoji' {
 module 'node-emoji' {
+  export function get(input: string): string;
   export function emojify(input: string): string;
 }
 }

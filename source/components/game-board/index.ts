@@ -1,4 +1,10 @@
-import {Component, EventEmitter, Input, Output, SimpleChanges} from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  SimpleChanges
+} from '@angular/core';
 import { GameService } from '../../services/game.service';
 
 @Component({
@@ -22,18 +28,18 @@ export class GameBoard {
   @Input() rowNum: number;
   @Input() colNum: number;
   @Input() rounds: number;
+  @Input() isGameover: boolean;
   @Output() isCorrect: EventEmitter<boolean> = new EventEmitter<boolean>();
   private gameboardArr: String[][];
 
-  constructor(private gameService: GameService) {
-  }
+  constructor(private gameService: GameService) {}
 
   ngOnInit() {
     this.start();
   }
 
-  ngOnChanges() {
-    if (this.rounds) {
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['rounds'] && this.rounds > 0) {
       this.start();
     }
   }
@@ -43,9 +49,9 @@ export class GameBoard {
   }
 
   emojiClicked($event) {
-    this.isCorrect.emit($event);
+    if (!this.isGameover) {
+      this.isCorrect.emit($event);
+    }
   }
-
-
 
 }

@@ -26,9 +26,10 @@ export class GameService {
         this.emojiArr[this.getRandomInt(this.emojiArr.length)]
       );
     });
-    while (targetCount < Math.floor(rowNum * colNum * this.difficulty)) {
+    while (targetCount < this.getTargetNum(rowNum, colNum)) {
       let randRow = this.getRandomInt(rowNum);
       let randCol = this.getRandomInt(colNum);
+      // make sure there are no two targets side by side
       if (!this.isTarget(gameboard[randRow][randCol])
        && !this.isTarget(gameboard[randRow][randCol === colNum - 1 ? randCol : randCol + 1])
        && !this.isTarget(gameboard[randRow][randCol === 0 ? randCol : randCol - 1])
@@ -41,6 +42,10 @@ export class GameService {
     }
 
     return gameboard;
+  }
+
+  getTargetNum(rowNum: number, colNum: number): number {
+    return Math.floor(rowNum * colNum * this.difficulty);
   }
 
   isTarget(val: string): boolean {

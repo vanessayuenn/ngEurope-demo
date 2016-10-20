@@ -1,33 +1,29 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { Component, NgModule, ViewEncapsulation } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { FISH_GAME_DECLARATIONS, AMI_SUPERHERO_ROUTES, AMI_SUPERHERO_DECLARATIONS } from './containers/superhero.routes';
+import { FishGame } from './components/fish-game-app';
 import { GameService } from './services/game.service';
 import { Emojify } from './pipes/emojify.pipe';
+import { FISH_GAME_DECLARATIONS, FISH_ROUTES } from './containers/fish.routes';
 
-@Component({
-  selector: 'fish-app',
-  encapsulation: ViewEncapsulation.None,
-  template: `<game class="flex flex-column justify-center items-center"></game>`,
-  styles: [ require('./styles/main.less') ]
-})
-export class PlentyOfFishGame {}
 
 @NgModule({
   declarations: [
-    PlentyOfFishGame,
+    FishGame,
     Emojify,
     FISH_GAME_DECLARATIONS
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    FISH_ROUTES
   ],
   providers: [GameService],
-  bootstrap: [PlentyOfFishGame]
+  bootstrap: [FishGame]
 })
-export class AppModule { }
+export class AppModule {}
 
 platformBrowserDynamic().bootstrapModule(AppModule);

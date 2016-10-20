@@ -20,9 +20,7 @@ export class Emoji {
   private clicked: boolean = false;
   private targetHit: boolean = false;
 
-  constructor(private gameService: GameService) {
-
-  }
+  constructor(private gameService: GameService) {}
 
   onClick() {
     if (!this.clicked) {
