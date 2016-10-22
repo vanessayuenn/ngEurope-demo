@@ -9,7 +9,7 @@ import { GameService } from '../../services/game.service';
   <h3>Hello, human.</h3>
     <img src={{img}} class="fit" />
     <h4>Cat iz very hungry! <br />Can you find me all the fish pleazzzee?</h4>
-    <h4>These are fish:
+    <h4>These are fish: <br />
       <span class="emoji" *ngFor="let target of targets">{{ target | emojify }}</span>
     </h4>
     <div

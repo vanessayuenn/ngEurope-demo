@@ -10,7 +10,7 @@ import { GameService } from '../../services/game.service';
 @Component({
   selector: 'game-board',
   template: `
-    <ul class="list-reset">
+    <ul class="list-reset m0">
       <li *ngFor="let row of gameboardArr" class="flex justify-center">
         <emoji
           *ngFor="let emoji of row"

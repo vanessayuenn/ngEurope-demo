@@ -17,7 +17,7 @@ import { Observable, Subscription } from 'rxjs/Rx';
 export class ScoreBoard {
 
   private time: number;
-  private maxTime: number = 45;
+  private maxTime: number = 30;
   private timer: Subscription;
   @Input() score: number;
   @Input() targetNum: number;

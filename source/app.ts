@@ -1,5 +1,13 @@
+import {
+  Component,
+  NgModule,
+  ViewEncapsulation
+} from '@angular/core';
+import {
+  LocationStrategy,
+  HashLocationStrategy,
+} from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
-import { Component, NgModule, ViewEncapsulation } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpModule } from '@angular/http';
@@ -21,7 +29,10 @@ import { FISH_GAME_DECLARATIONS, FISH_ROUTES } from './containers/fish.routes';
     HttpModule,
     FISH_ROUTES
   ],
-  providers: [GameService],
+  providers: [
+    GameService,
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
+  ],
   bootstrap: [FishGame]
 })
 export class AppModule {}
