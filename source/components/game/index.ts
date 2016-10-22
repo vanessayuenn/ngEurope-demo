@@ -5,25 +5,27 @@ import { GameService } from '../../services/game.service';
 @Component({
   selector: 'game',
   template: `
-  <score-board
-    class="flex justify-between col-10"
-    [score]="score"
-    [targetNum]="targetNum"
-    [rounds]="rounds"
-    [isGameover]="isGameover"
-    (timesUp)="onGameover('fail')"
-  ></score-board>
-  <game-board
-    [rowNum]="rowNum"
-    [colNum]="colNum"
-    [rounds]="rounds"
-    [isGameover]="isGameover"
-    (isCorrect)="isCorrect($event)"
-  ></game-board>
-  <div
-    class="px2 py1 rounded button"
-    (click)="onRestart()"
-  >RESTART</div>
+  <div class="flex flex-column items-center center">
+    <score-board
+      class="flex justify-between col-12"
+      [score]="score"
+      [targetNum]="targetNum"
+      [rounds]="rounds"
+      [isGameover]="isGameover"
+      (timesUp)="onGameover('fail')"
+    ></score-board>
+    <game-board
+      [rowNum]="rowNum"
+      [colNum]="colNum"
+      [rounds]="rounds"
+      [isGameover]="isGameover"
+      (isCorrect)="isCorrect($event)"
+    ></game-board>
+    <div
+      class="px2 py1 rounded button center"
+      (click)="onRestart()"
+    >RESTART</div>
+  </div>
   `
 })
 
@@ -40,7 +42,7 @@ export class GameComponent {
     private router: Router
   ) {
     this.rowNum = 10;
-    this.colNum = 6;
+    this.colNum = 10;
     this.score = 0;
     this.rounds = 0;
     this.targetNum = this.gameService.getTargetNum(this.rowNum, this.colNum);

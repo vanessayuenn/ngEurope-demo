@@ -17,7 +17,7 @@ import { Observable, Subscription } from 'rxjs/Rx';
 export class ScoreBoard {
 
   private time: number;
-  private maxTime: number = 30;
+  private maxTime: number = 45;
   private timer: Subscription;
   @Input() score: number;
   @Input() targetNum: number;
@@ -40,7 +40,7 @@ export class ScoreBoard {
     }
   }
 
-  ngOnDestry() {
+  ngOnDestroy() {
     this.timer.unsubscribe();
   }
 

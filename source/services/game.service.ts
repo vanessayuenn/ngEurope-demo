@@ -44,12 +44,16 @@ export class GameService {
     return gameboard;
   }
 
+  get targets(): Array<string> {
+    return this.emojiTargets;
+  }
+
   getTargetNum(rowNum: number, colNum: number): number {
     return Math.floor(rowNum * colNum * this.difficulty);
   }
 
   isTarget(val: string): boolean {
-    return (this.emojiTargets.indexOf(val) >= 0);
+    return this.emojiTargets.indexOf(val) >= 0;
   }
 
   getRandomInt(max: number): number {

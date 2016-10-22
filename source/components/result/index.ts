@@ -50,7 +50,7 @@ export class Result {
   }
 
   onRestart() {
-    this.router.navigateByUrl('');
+    this.router.navigateByUrl('/game');
   }
 
 }
