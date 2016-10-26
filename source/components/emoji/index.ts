@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { GameService } from '../../services/game.service';
 
 @Component({
@@ -15,8 +15,8 @@ import { GameService } from '../../services/game.service';
 })
 export class Emoji {
 
-  @Output() isCorrect: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Input() emoji: string;
+  @Output() isCorrect: EventEmitter<boolean> = new EventEmitter<boolean>();
   private clicked: boolean = false;
   private targetHit: boolean = false;
 

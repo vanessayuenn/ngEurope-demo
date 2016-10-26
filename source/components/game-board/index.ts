@@ -15,7 +15,6 @@ import { GameService } from '../../services/game.service';
         <emoji
           *ngFor="let emoji of row"
           [emoji]="emoji"
-          (isCorrect)="emojiClicked($event)"
           class="flex justify-center items-center"
         >
         </emoji>
@@ -46,12 +45,6 @@ export class GameBoard {
 
   start() {
     this.gameboardArr = this.gameService.generateGameBoard(this.rowNum, this.colNum);
-  }
-
-  emojiClicked($event) {
-    if (!this.isGameover) {
-      this.isCorrect.emit($event);
-    }
   }
 
 }

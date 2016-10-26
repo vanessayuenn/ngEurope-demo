@@ -27,6 +27,7 @@ import { FISH_GAME_DECLARATIONS, FISH_ROUTES } from './containers/fish.routes';
   imports: [
     BrowserModule,
     HttpModule,
+    FormsModule,
     FISH_ROUTES
   ],
   providers: [

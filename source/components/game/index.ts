@@ -42,7 +42,7 @@ export class GameComponent {
     private router: Router
   ) {
     this.rowNum = 10;
-    this.colNum = 6;
+    this.colNum = 10;
     this.score = 0;
     this.rounds = 0;
     this.targetNum = this.gameService.getTargetNum(this.rowNum, this.colNum);

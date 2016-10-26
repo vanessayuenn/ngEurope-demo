@@ -35,7 +35,6 @@ export class ScoreBoard {
       this.startTimer();
     }
     if (changes['isGameover'] && this.isGameover && this.timer) {
-      // console.log(this.time);
       this.timer.unsubscribe();
     }
   }
