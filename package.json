@@ -1,12 +1,14 @@
 {
   "name": "fish-game",
+  "main": "main.js",
   "scripts": {
     "postinstall": "npm run typings",
     "typings": "rimraf typings && typings install",
     "dev": "webpack-dev-server --display-error-details --display-cached",
-    "build": "webpack --display-error-details --display-cached",
+    "build": "rm -rf dist && webpack --display-error-details --display-cached",
     "heroku-postbuild": "webpack -p",
-    "start": "node server.js"
+    "start": "node server.js",
+    "electron": "electron ."
   },
   "devDependencies": {},
   "dependencies": {
@@ -20,6 +22,7 @@
     "@angular/router": "3.0.0",
     "core-js": "^2.2.1",
     "css-loader": "^0.21.0",
+    "electron": "^1.6.2",
     "es6-promise": "^3.0.2",
     "es6-shim": "^0.35.0",
     "file-loader": "^0.8.4",
